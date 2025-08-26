@@ -1,0 +1,137 @@
+# 🔐 API Keys and Secrets - 절대 업로드 금지!
+config/api-keys/
+*.env
+.env.*
+!.env.example
+api-keys.json
+secret-keys.js
+claude-api-key.txt
+youtube-client-secret.json
+aws-credentials.json
+
+# 📦 Dependencies
+node_modules/
+jspm_packages/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 🗂️ Logs
+logs
+*.log
+
+# 📊 Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# 🏃‍♂️ Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 📈 Coverage and Test Files
+lib-cov
+coverage
+*.lcov
+.nyc_output
+
+# 🔧 Build Tools Cache
+.grunt
+bower_components
+.lock-wscript
+build/Release
+
+# ❄️ Snowpack dependency directory
+web_modules/
+
+# 📘 TypeScript cache
+*.tsbuildinfo
+
+# 💾 Optional cache directories
+.npm
+.eslintcache
+.stylelintcache
+
+# 📝 Optional REPL history
+.node_repl_history
+
+# 📦 Package outputs
+*.tgz
+.yarn-integrity
+
+# 🎁 Parcel cache
+.cache
+.parcel-cache
+
+# ⚡ Next.js build output
+.next
+out
+
+# 🎨 Nuxt.js build output
+.nuxt
+dist
+
+# 🎪 Gatsby files
+.cache/
+
+# 📚 VuePress build output
+.vuepress/dist
+.temp
+.cache
+
+# 🧸 Sveltekit cache
+.svelte-kit/
+
+# 📖 VitePress
+**/.vitepress/dist
+**/.vitepress/cache
+
+# 📜 Docusaurus cache
+.docusaurus
+
+# ⚡ Serverless directories
+.serverless/
+
+# 🔥 FuseBox cache
+.fusebox/
+
+# 🗄️ DynamoDB Local files
+.dynamodb/
+
+# 🔥 Firebase cache
+.firebase/
+
+# 🔌 TernJS port file
+.tern-port
+
+# 🖥️ System Files  
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 🗃️ Temporary Files
+*.tmp
+*.temp
+temp/
+
+# 💻 VSCode test files
+.vscode-test
+
+# 🧶 Yarn v3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ⚡ Vite logs
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*AWSCLIV2.msi
+config/youtube-credentials.json
+config/youtube-token.json
+credentials/
+*.json
+upload-test.js

@@ -1,0 +1,338 @@
+{
+  "project": "Calcoverse - 1년 수학 교육과정",
+  "version": "1.0",
+  "total_problems": 730,
+  "structure": "52주 × 14문제/주 = 728개 + 예비 2개",
+  "target_audience": "전세계 1,300만 중학생",
+  "languages": ["ko", "en", "zh", "ja", "es"],
+  
+  "curriculum_overview": {
+    "grade1": {
+      "weeks": 17,
+      "problems": 238,
+      "description": "중학교 1학년 기본 개념 완성"
+    },
+    "grade2": {
+      "weeks": 17, 
+      "problems": 238,
+      "description": "중학교 2학년 심화 개념 이해"
+    },
+    "grade3": {
+      "weeks": 18,
+      "problems": 252,
+      "description": "중학교 3학년 고급 개념 마스터"
+    },
+    "review": {
+      "weeks": 0,
+      "problems": 2,
+      "description": "예비 문제 (특별 이벤트용)"
+    }
+  },
+
+  "weekly_schedule": {
+    "problems_per_week": 14,
+    "daily_distribution": {
+      "monday": 2,
+      "tuesday": 2, 
+      "wednesday": 2,
+      "thursday": 2,
+      "friday": 2,
+      "saturday": 2,
+      "sunday": 2
+    },
+    "upload_times": ["08:00", "13:00"]
+  },
+
+  "difficulty_levels": {
+    "basic": {
+      "percentage": 40,
+      "description": "기본 개념 이해 (정답률 70-80%)",
+      "hook_phrase": "기본기를 탄탄히!"
+    },
+    "intermediate": {
+      "percentage": 35,
+      "description": "응용 문제 해결 (정답률 50-60%)",
+      "hook_phrase": "실력을 한 단계 업!"
+    },
+    "advanced": {
+      "percentage": 20,
+      "description": "심화 사고력 (정답률 30-40%)",
+      "hook_phrase": "중학생 10명 중 7명이 틀리는 문제!"
+    },
+    "challenge": {
+      "percentage": 5,
+      "description": "최고난도 도전 (정답률 10-20%)",
+      "hook_phrase": "수학 천재도 고민하는 문제!"
+    }
+  },
+
+  "grade1_curriculum": {
+    "week_1_2": {
+      "topic": "자연수와 정수",
+      "subtopics": ["자연수", "정수", "수의 대소관계"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 16, "intermediate": 8, "advanced": 4}
+    },
+    "week_3_4": {
+      "topic": "정수의 계산",
+      "subtopics": ["덧셈과 뺄셈", "곱셈과 나눗셈", "사칙연산 혼합"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_5_6": {
+      "topic": "유리수",
+      "subtopics": ["분수", "소수", "유리수의 계산"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 12, "advanced": 4}
+    },
+    "week_7_8": {
+      "topic": "문자와 식",
+      "subtopics": ["문자의 사용", "식의 계산", "식의 값"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 14, "intermediate": 10, "advanced": 4}
+    },
+    "week_9_10": {
+      "topic": "일차방정식",
+      "subtopics": ["방정식의 개념", "일차방정식의 풀이", "방정식의 활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_11_12": {
+      "topic": "좌표평면과 그래프",
+      "subtopics": ["순서쌍", "좌표평면", "정비례와 반비례"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_13_14": {
+      "topic": "기본 도형",
+      "subtopics": ["점, 직선, 평면", "위치관계", "각도"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 16, "intermediate": 8, "advanced": 4}
+    },
+    "week_15_16": {
+      "topic": "작도와 합동",
+      "subtopics": ["작도", "삼각형의 합동조건", "합동의 성질"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 12, "advanced": 4}
+    },
+    "week_17": {
+      "topic": "평면도형",
+      "subtopics": ["다각형", "원", "부등식"],
+      "problems": 14,
+      "difficulty_distribution": {"basic": 8, "intermediate": 4, "advanced": 2}
+    }
+  },
+
+  "grade2_curriculum": {
+    "week_18_19": {
+      "topic": "연립일차방정식",
+      "subtopics": ["연립방정식의 개념", "해법", "활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_20_21": {
+      "topic": "부등식",
+      "subtopics": ["일차부등식", "연립부등식", "부등식의 활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_22_23": {
+      "topic": "일차함수",
+      "subtopics": ["함수의 개념", "일차함수의 그래프", "기울기와 절편"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 14, "advanced": 4}
+    },
+    "week_24_25": {
+      "topic": "일차함수의 활용",
+      "subtopics": ["두 일차함수의 관계", "연립방정식과 그래프", "실생활 활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 8, "intermediate": 12, "advanced": 8}
+    },
+    "week_26_27": {
+      "topic": "삼각형의 성질",
+      "subtopics": ["이등변삼각형", "직각삼각형", "삼각형의 외심과 내심"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_28_29": {
+      "topic": "사각형의 성질",
+      "subtopics": ["평행사변형", "여러 사각형", "사각형의 성질"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_30_31": {
+      "topic": "도형의 닮음",
+      "subtopics": ["닮은 도형", "닮음의 성질", "삼각형의 닮음"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 8, "intermediate": 14, "advanced": 6}
+    },
+    "week_32_33": {
+      "topic": "피타고라스 정리",
+      "subtopics": ["피타고라스 정리", "정리의 활용", "좌표평면에서의 거리"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_34": {
+      "topic": "확률",
+      "subtopics": ["경우의 수", "확률의 개념", "확률 계산"],
+      "problems": 14,
+      "difficulty_distribution": {"basic": 8, "intermediate": 4, "advanced": 2}
+    }
+  },
+
+  "grade3_curriculum": {
+    "week_35_36": {
+      "topic": "제곱근",
+      "subtopics": ["제곱근의 개념", "무리수", "제곱근의 계산"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_37_38": {
+      "topic": "이차방정식",
+      "subtopics": ["이차방정식의 개념", "인수분해를 이용한 해법", "근의 공식"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_39_40": {
+      "topic": "이차방정식의 활용",
+      "subtopics": ["이차방정식의 실근", "방정식의 활용", "이차방정식과 그래프"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 8, "intermediate": 14, "advanced": 6}
+    },
+    "week_41_42": {
+      "topic": "이차함수",
+      "subtopics": ["이차함수의 개념", "이차함수의 그래프", "그래프의 성질"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 8, "intermediate": 12, "advanced": 8}
+    },
+    "week_43_44": {
+      "topic": "이차함수의 활용",
+      "subtopics": ["이차함수의 최대최소", "이차함수와 이차방정식", "실생활 활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 6, "intermediate": 14, "advanced": 8}
+    },
+    "week_45_46": {
+      "topic": "원의 성질",
+      "subtopics": ["중심각과 호", "원주각", "원에 내접하는 사각형"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 10, "intermediate": 12, "advanced": 6}
+    },
+    "week_47_48": {
+      "topic": "삼각비",
+      "subtopics": ["삼각비의 개념", "삼각비의 값", "삼각비의 활용"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 8, "intermediate": 14, "advanced": 6}
+    },
+    "week_49_50": {
+      "topic": "통계",
+      "subtopics": ["자료의 정리", "평균과 분산", "상관관계"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 12, "intermediate": 10, "advanced": 6}
+    },
+    "week_51_52": {
+      "topic": "종합 정리",
+      "subtopics": ["중1-3 전체 복습", "종합 문제", "실전 문제"],
+      "problems": 28,
+      "difficulty_distribution": {"basic": 4, "intermediate": 12, "advanced": 10, "challenge": 2}
+    }
+  },
+
+  "problem_types": {
+    "calculation": {
+      "percentage": 25,
+      "description": "계산 문제",
+      "examples": ["분수 계산", "방정식 풀이", "함수값 구하기"]
+    },
+    "concept": {
+      "percentage": 30,
+      "description": "개념 이해",
+      "examples": ["정의 확인", "성질 적용", "개념 분류"]
+    },
+    "application": {
+      "percentage": 25,
+      "description": "응용 문제",
+      "examples": ["문장제", "실생활 연결", "다단계 해결"]
+    },
+    "proof": {
+      "percentage": 10,
+      "description": "증명 문제",
+      "examples": ["기하 증명", "대수 증명", "논리 추론"]
+    },
+    "creative": {
+      "percentage": 10,
+      "description": "창의 사고",
+      "examples": ["패턴 찾기", "최적화", "추상적 사고"]
+    }
+  },
+
+  "hook_phrases": {
+    "difficulty_based": [
+      "중학생 10명 중 7명이 틀리는 문제!",
+      "수학 천재도 고민하는 초고난도!",
+      "기본기를 탄탄히 다지자!",
+      "실력 향상의 핵심 포인트!"
+    ],
+    "topic_based": [
+      "방정식의 숨겨진 비밀!",
+      "함수, 이것만 알면 마스터!",
+      "도형의 신비한 성질!",
+      "확률의 놀라운 세계!"
+    ],
+    "curiosity": [
+      "정답을 맞힐 수 있을까?",
+      "3초 안에 풀 수 있다면 천재!",
+      "이 문제의 핵심은?",
+      "수학의 마법을 경험해보자!"
+    ]
+  },
+
+  "api_integration": {
+    "claude_api": {
+      "problem_generation": "이 JSON을 참조하여 주제별 문제 생성",
+      "difficulty_control": "난이도별 분포에 따른 문제 조절",
+      "language_localization": "5개 언어별 문제 번역"
+    },
+    "scheduling": {
+      "weekly_topics": "주차별 주제 자동 선택",
+      "daily_problems": "일일 2회 업로드 스케줄",
+      "difficulty_rotation": "난이도 균형있는 배치"
+    }
+  },
+
+  "quality_control": {
+    "review_criteria": [
+      "교육과정 적합성",
+      "난이도 적절성", 
+      "문제 해설 명확성",
+      "시각적 매력도",
+      "국제적 호환성"
+    ],
+    "feedback_loop": {
+      "viewer_analytics": "조회수, 완주율 분석",
+      "comment_analysis": "댓글 피드백 반영",
+      "copilot_review": "AI 품질 검토"
+    }
+  },
+
+  "success_metrics": {
+    "content_kpi": {
+      "completion_rate": "60% 이상 시청 완료율",
+      "engagement_rate": "5% 이상 댓글 참여율",
+      "subscription_growth": "주간 100명 이상 구독 증가"
+    },
+    "educational_impact": {
+      "problem_solve_accuracy": "문제별 정답률 추적",
+      "learning_progression": "주제별 이해도 개선",
+      "global_reach": "5개 언어권 균등 성장"
+    }
+  },
+
+  "backup_problems": {
+    "special_events": {
+      "new_year": "신년 특별 문제",
+      "exam_season": "시험 대비 핵심 문제"
+    },
+    "total": 2,
+    "description": "예상치 못한 상황을 대비한 예비 문제"
+  }
+}

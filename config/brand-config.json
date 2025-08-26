@@ -1,0 +1,15 @@
+{
+  "name": "Calcuverse",
+  "fullName": "Calcuverse Global",
+  "slogan": "계산의 우주로 떠나는 여행!",
+  "englishSlogan": "Journey to the Universe of Calculations!",
+  "logo": "🌌",
+  "domain": "calcuverse.com",
+  "youtube": "@Calcuverse",
+  "colors": {
+    "primary": "#1a1a2e",
+    "secondary": "#16213e",
+    "accent": "#ffd700",
+    "answer": "#00ff88"
+  }
+}

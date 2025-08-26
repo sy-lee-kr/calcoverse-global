@@ -1,0 +1,62 @@
+# website 폴더 안에 index.html 파일 생성
+@"
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathVerse - 전 세계 중학교 수학</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 MathVerse</h1>
+            <p>전 세계 중학생을 위한 수학 문제 플랫폼</p>
+            <div class="stats">
+                <span>해결한 문제: <strong id="solved-count">0</strong></span>
+                <span>정답률: <strong id="accuracy">0%</strong></span>
+            </div>
+        </header>
+        
+        <main>
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-type" id="problem-type">대수</span>
+                    <span class="difficulty" id="difficulty">중급</span>
+                </div>
+                
+                <div class="problem-content">
+                    <h2>문제</h2>
+                    <div id="problem-text">문제를 불러오는 중...</div>
+                    
+                    <div class="answer-section">
+                        <h3>답안 입력</h3>
+                        <input type="text" id="answer-input" placeholder="답을 입력하세요">
+                        <button id="check-answer">정답 확인</button>
+                    </div>
+                    
+                    <div id="result" class="result hidden"></div>
+                </div>
+                
+                <div class="controls">
+                    <button id="next-problem">다음 문제</button>
+                    <button id="hint-button">힌트 보기</button>
+                </div>
+            </div>
+            
+            <div class="problem-categories">
+                <h3>문제 유형 선택</h3>
+                <button class="category-btn" data-category="algebra">대수</button>
+                <button class="category-btn" data-category="geometry">기하</button>
+                <button class="category-btn" data-category="functions">함수</button>
+                <button class="category-btn" data-category="statistics">통계</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/problems.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+"@ | Out-File -FilePath "index.html" -Encoding UTF8

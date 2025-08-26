@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcoverse - 배포 테스트 문제</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 1080px;
+            height: 1920px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .brand-header {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .brand-logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .brand-tagline {
+            font-size: 24px;
+            color: rgba(255,255,255,0.9);
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        .hook-section {
+            position: absolute;
+            top: 280px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.95);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 900px;
+            animation: slideDown 1.2s ease-out;
+        }
+
+        .hook-text {
+            font-size: 36px;
+            color: #e74c3c;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .hook-subtitle {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .problem-section {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            max-width: 950px;
+            margin: 0 auto;
+            animation: scaleUp 1.5s ease-out;
+            border: 3px solid #3498db;
+        }
+
+        .problem-title {
+            font-size: 42px;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .problem-content {
+            font-size: 38px;
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .number-highlight {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-weight: 800;
+            display: inline-block;
+            margin: 0 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .choices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .choice {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .choice:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .choice.correct {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            animation: correctAnswer 2s ease-in-out;
+        }
+
+        .timer-section {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(231, 76, 60, 0.9);
+            padding: 20px 40px;
+            border-radius: 50px;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-section {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 24px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cta-button {
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { 
+                transform: translate(-50%, -100px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(-50%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            from { 
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to { 
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes correctAnswer {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-number {
+            position: absolute;
+            color: rgba(255,255,255,0.1);
+            font-size: 120px;
+            font-weight: 900;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-number:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-number:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+        .floating-number:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; }
+        .floating-number:nth-child(4) { bottom: 10%; right: 20%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-number">1</div>
+        <div class="floating-number">2</div>
+        <div class="floating-number">3</div>
+        <div class="floating-number">+</div>
+    </div>
+
+    <div class="video-container">
+        <div class="brand-header">
+            <div class="brand-logo">🔢 CALCOVERSE</div>
+            <div class="brand-tagline">Math Universe for Middle School</div>
+        </div>
+
+        <div class="hook-section">
+            <div class="hook-text">🎯 기본기를 탄탄히!</div>
+            <div class="hook-subtitle">중1 수학의 시작점, 자연수 마스터!</div>
+        </div>
+
+        <div class="problem-section">
+            <div class="problem-title">📊 자연수 대소관계 문제</div>
+            <div class="problem-content">
+                다음 중에서 <span class="number-highlight">가장 큰 자연수</span>는?<br><br>
+                주어진 수들을 비교해보세요!
+            </div>
+
+            <div class="choices">
+                <div class="choice" data-answer="A">A) 47</div>
+                <div class="choice" data-answer="B">B) 52</div>
+                <div class="choice correct" data-answer="C">C) 68</div>
+                <div class="choice" data-answer="D">D) 35</div>
+            </div>
+        </div>
+
+        <div class="timer-section">
+            ⏰ 3초 안에 답할 수 있다면 천재!
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-text">정답이 뭐라고 생각하세요?</div>
+            <div class="cta-buttons">
+                <button class="cta-button">👍 구독</button>
+                <button class="cta-button">💬 댓글</button>
+                <button class="cta-button">🔔 알림</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 3초 후 정답 공개
+        setTimeout(() => {
+            const correctChoice = document.querySelector('.choice.correct');
+            correctChoice.style.animation = 'correctAnswer 2s ease-in-out';
+            
+            // 추가 애니메이션 효과
+            const timerSection = document.querySelector('.timer-section');
+            timerSection.innerHTML = '🎉 정답: C) 68 - 가장 큰 자연수!';
+            timerSection.style.background = 'rgba(39, 174, 96, 0.9)';
+        }, 3000);
+
+        // 클릭 이벤트 (상호작용)
+        document.querySelectorAll('.choice').forEach(choice => {
+            choice.addEventListener('click', function() {
+                const isCorrect = this.classList.contains('correct');
+                if (isCorrect) {
+                    this.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+                    alert('🎉 정답입니다! 68이 가장 큰 자연수예요!');
+                } else {
+                    this.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+                    alert('❌ 다시 생각해보세요! 68과 비교해보세요.');
+                }
+            });
+        });
+
+        // CTA 버튼 이벤트
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const text = this.textContent;
+                if (text.includes('구독')) {
+                    alert('🎉 구독 감사합니다! 매일 새로운 수학 문제를 만나보세요!');
+                } else if (text.includes('댓글')) {
+                    alert('💬 댓글로 다음 문제 주제를 제안해주세요!');
+                } else if (text.includes('알림')) {
+                    alert('🔔 알림 설정 완료! 새 문제가 올라올 때마다 알려드릴게요!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

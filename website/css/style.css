@@ -1,0 +1,277 @@
+# css 폴더로 이동해서 style.css 파일 생성
+@"
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stats span {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.problem-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.problem-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.problem-type, .difficulty {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.problem-type {
+    background: #4CAF50;
+    color: white;
+}
+
+.difficulty {
+    background: #FF9800;
+    color: white;
+}
+
+.problem-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#problem-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #4CAF50;
+}
+
+.answer-section {
+    margin: 25px 0;
+}
+
+.answer-section h3 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+#answer-input {
+    width: 60%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+
+#answer-input:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+#check-answer {
+    padding: 12px 24px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#check-answer:hover {
+    background: #1976D2;
+    transform: translateY(-2px);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.controls button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+#next-problem {
+    background: #4CAF50;
+    color: white;
+}
+
+#next-problem:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+#hint-button {
+    background: #FF9800;
+    color: white;
+}
+
+#hint-button:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+}
+
+.problem-categories {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.problem-categories h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.category-btn {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn:hover {
+    background: #5a4fcf;
+    transform: scale(1.05);
+}
+
+.category-btn.active {
+    background: #4CAF50;
+    transform: scale(1.05);
+}
+
+.result {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    animation: fadeIn 0.5s;
+}
+
+.result.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.result.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #answer-input {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .problem-categories {
+        text-align: center;
+    }
+}
+
+/* 다크모드를 위한 기본 설정 */
+@media (prefers-color-scheme: dark) {
+    .problem-card {
+        background: #2d3748;
+        color: white;
+    }
+    
+    .problem-content h2 {
+        color: white;
+    }
+    
+    #problem-text {
+        background: #4a5568;
+        color: white;
+    }
+}
+"@ | Out-File -FilePath "css/style.css" -Encoding UTF8
