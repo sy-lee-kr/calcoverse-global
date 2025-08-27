@@ -1,4 +1,13 @@
 /**
+ * problem-manager.js 오류 수정 스크립트
+ * HTML 코드가 섞여있는 문제 해결
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// 올바른 problem-manager.js 내용
+const correctProblemManagerJs = `/**
  * Problem Manager Module
  * Auto-generated from app.js modularization
  * Path: src/core/problem-manager.js
@@ -35,7 +44,7 @@ export class ProblemManager {
         this.problems = this.getDefaultProblems();
       }
       
-      this.logger.info(`Loaded ${this.problems.length} problems`);
+      this.logger.info(\`Loaded \${this.problems.length} problems\`);
     } catch (error) {
       this.logger.error('Failed to load problems:', error);
       this.problems = this.getDefaultProblems();
@@ -84,7 +93,7 @@ export class ProblemManager {
       this.categories.get(category).push(problem);
     });
     
-    this.logger.info(`Organized into ${this.categories.size} categories`);
+    this.logger.info(\`Organized into \${this.categories.size} categories\`);
   }
 
   getNextProblem() {
@@ -100,7 +109,7 @@ export class ProblemManager {
     const problem = this.problems[this.currentIndex];
     this.currentIndex++;
     
-    this.logger.info(`Getting problem: ${problem.id}`);
+    this.logger.info(\`Getting problem: \${problem.id}\`);
     return problem;
   }
 
@@ -117,7 +126,7 @@ export class ProblemManager {
     }
     
     const problem = this.problems[this.currentIndex];
-    this.logger.info(`Getting problem: ${problem.id}`);
+    this.logger.info(\`Getting problem: \${problem.id}\`);
     return problem;
   }
 
@@ -125,7 +134,7 @@ export class ProblemManager {
     const problem = this.problems.find(p => p.id === id);
     
     if (!problem) {
-      this.logger.warn(`Problem not found: ${id}`);
+      this.logger.warn(\`Problem not found: \${id}\`);
     }
     
     return problem;
@@ -143,13 +152,13 @@ export class ProblemManager {
     const problem = this.getProblemById(problemId);
     
     if (!problem) {
-      this.logger.error(`Cannot validate answer for unknown problem: ${problemId}`);
+      this.logger.error(\`Cannot validate answer for unknown problem: \${problemId}\`);
       return false;
     }
     
     const isCorrect = problem.answer === userAnswer;
     
-    this.logger.info(`Answer validation for ${problemId}: ${isCorrect ? 'Correct' : 'Incorrect'}`);
+    this.logger.info(\`Answer validation for \${problemId}: \${isCorrect ? 'Correct' : 'Incorrect'}\`);
     
     // 이벤트 발생 (core가 있는 경우)
     if (this.core) {
@@ -195,4 +204,48 @@ export default ProblemManager;
 // CommonJS compatibility
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = ProblemManager;
+}`;
+
+// 실행 함수
+async function fixProblemManager() {
+  console.log('=================================');
+  console.log('Problem Manager 오류 수정');
+  console.log('=================================\n');
+  
+  try {
+    const problemManagerPath = path.join('src', 'core', 'problem-manager.js');
+    
+    // 백업
+    if (fs.existsSync(problemManagerPath)) {
+      const backupPath = problemManagerPath + '.backup-' + Date.now();
+      fs.copyFileSync(problemManagerPath, backupPath);
+      console.log('✅ 기존 파일 백업 완료:', backupPath);
+    }
+    
+    // 새 파일 작성
+    fs.writeFileSync(problemManagerPath, correctProblemManagerJs, 'utf8');
+    console.log('✅ problem-manager.js 수정 완료\n');
+    
+    console.log('다음 명령어를 실행하세요:\n');
+    console.log('1. 앱 실행:');
+    console.log('   npm start\n');
+    
+    console.log('2. HTML 파일 확인:');
+    console.log('   start problem-integer-003-question.html\n');
+    
+    console.log('3. 모든 변경사항 커밋:');
+    console.log('   git add .');
+    console.log('   git commit -m "fix: problem-manager.js HTML 코드 제거"');
+    console.log('   git push --set-upstream origin main\n');
+    
+  } catch (error) {
+    console.error('❌ 오류 발생:', error);
+  }
 }
+
+// 실행
+if (require.main === module) {
+  fixProblemManager();
+}
+
+module.exports = { fixProblemManager };

@@ -1,95 +1,56 @@
 /**
- * TemplateRenderer Module
- * Auto-generated from app.js modularization
- * Path: src/modules/template-renderer.js
+ * Template Renderer Module
  */
 
-import { Logger } from '../utils/logger.js';
+export class TemplateRenderer {
+  constructor() {
+    this.templates = new Map();
+    this.cache = new Map();
+  }
 
-            result.innerHTML = '⏳ 처리 중...';
-          }
-          
-          function showResult(title, data) {
-            const result = document.getElementById('result');
-            result.style.display = 'block';
-            result.innerHTML = '<h4>' + title + '</h4><pre>' + JSON.stringify(data, null, 2) + '</pre>';
-          }
-        </script>
-      </body>
-    </html>
-  `);
-});
+  async initialize() {
+    console.log('TemplateRenderer initialized');
+    this.loadTemplates();
+  }
 
-// API 라우트들
-app.get('/api/test/problem', async (req, res) => {
-  try {
-              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-              gap: 20px;
-              margin: 20px 0;
-            }
-            .info-card {
-              background: #f8f9fa;
-              padding: 20px;
-              border-radius: 10px;
-              text-align: center;
-            }
-            .info-number {
-              font-size: 2em;
-              font-weight: bold;
-              color: #667eea;
-            }
-            .hidden {
-              display: none;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="header">
-            <h1>📚 Math Shorts 콘텐츠 승인</h1>
-            <p>생성된 수학 문제를 검토하고 승인해주세요</p>
-          </div>
-          
-          <div class="preview-section">
-            <h2>📋 승인 요청 정보</h2>
-            <div class="info-grid">
-              <div class="info-card">
-                <div class="info-number">5</div>
-                <div>언어 버전</div>
-              </div>
-              <div class="info-card">
-                <div class="info-number">15초</div>
-                <div>예상 길이</div>
-              </div>
-              <div class="info-card">
-                <div class="info-number">2</div>
-                <div>시간대</div>
-              </div>
-              <div class="info-card">
-                <div class="info-number">중1</div>
-                <div>대상 학년</div>
-              </div>
-            </div>
-          </div>
+  loadTemplates() {
+    // Load default templates
+    this.templates.set('default', {
+      html: '<div>{{content}}</div>'
+    });
+    
+    this.templates.set('problem', {
+      html: '<div class="problem"><h2>{{title}}</h2><p>{{question}}</p></div>'
+    });
+  }
 
-          <div class="preview-section">
-            <h2>🎯 문제 미리보기</h2>
-            
-            <div class="language-tabs">
-              <button class="tab active" onclick="showLanguage('ko')">🇰🇷 한국어</button>
-              <button class="tab" onclick="showLanguage('en')">🇺🇸 English</button>
-              <button class="tab" onclick="showLanguage('zh')">🇨🇳 中文</button>
-              <button class="tab" onclick="showLanguage('ja')">🇯🇵 日本語</button>
-              <button class="tab" onclick="showLanguage('es')">🇪🇸 Español</button>
-            </div>
+  render(templateName, data) {
+    const template = this.templates.get(templateName);
+    
+    if (!template) {
+      console.warn(`Template ${templateName} not found`);
+      return '';
+    }
+    
+    // Simple template rendering
+    let html = template.html;
+    
+    Object.entries(data).forEach(([key, value]) => {
+      const regex = new RegExp(`{{\\s*${key}\\s*}}`, 'g');
+      html = html.replace(regex, value);
+    });
+    
+    return html;
+  }
 
-            <!-- 한국어 버전 -->
+  async start() {
+    console.log('TemplateRenderer started');
+  }
 
-
-// Exports
-export { TemplateRenderer };
-export default TemplateRenderer;
-
-// CommonJS compatibility
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = TemplateRenderer;
+  async stop() {
+    this.cache.clear();
+    console.log('TemplateRenderer stopped');
+  }
 }
+
+export default TemplateRenderer;

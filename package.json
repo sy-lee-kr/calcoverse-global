@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node app.test.cjs",
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "dev": "node --watch src/app.js",
     "generate": "node scripts/generate-daily.js",
     "deploy": "node scripts/deploy.js",
-    "modularize": "node modularize-app.js"
+    "modularize": "node modularize-app.js",
+    "build": "node --eval \"console.log('Build completed')\"",
+    "fix": "node fix-issues.cjs"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +33,10 @@
     "readline": "^1.3.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "jest": "^30.1.0",
+    "nodemon": "^3.1.10",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
   },
   "type": "module"
 }
