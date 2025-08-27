@@ -245,47 +245,48 @@
     <div class="container">
         <div class="header">
             <div class="problem-type">정수와 유리수</div>
-            <div class="problem-number">문제 3</div>
-            <div class="problem-title">정수의 덧셈</div>
+            <div class="problem-number">문제 4</div>
+            <div class="problem-title">정수의 곱셈</div>
         </div>
         
         <div class="content">
             <div class="question-section">
                 <div class="question-text">다음 식을 계산하시오.</div>
                 
-                <div class="math-expression">(-5) + 3 = ?</div>
+                <div class="math-expression">(-3) × (-4) = ?</div>
                 
                 
                 
                 <div class="choices-container">
                     
-                    <button class="choice-btn" data-value="-8">
+                    <button class="choice-btn" data-value="-12">
                         <span class="choice-number">①</span>
-                        <span>-8</span>
+                        <span>-12</span>
                     </button>
                     
-                    <button class="choice-btn" data-value="-2">
+                    <button class="choice-btn" data-value="-7">
                         <span class="choice-number">②</span>
-                        <span>-2</span>
+                        <span>-7</span>
                     </button>
                     
-                    <button class="choice-btn" data-value="2">
+                    <button class="choice-btn" data-value="7">
                         <span class="choice-number">③</span>
-                        <span>2</span>
+                        <span>7</span>
                     </button>
                     
-                    <button class="choice-btn" data-value="8">
+                    <button class="choice-btn" data-value="12">
                         <span class="choice-number">④</span>
-                        <span>8</span>
+                        <span>12</span>
                     </button>
                     
                 </div>
                 
             </div>
             
-            ">
+            
+            <div class="answer-section {{#if isAnswerVisible}}show">
                 <div class="answer-label">정답</div>
-                <div class="math-expression">-2</div>
+                <div class="math-expression">12</div>
                 
                 
             </div>
@@ -300,7 +301,7 @@
     
     <script>
         // 동적 기능
-        const problemData = {"correctAnswer":"-2","nextUrl":"problem-integer-003-question.html","previousUrl":"problem-integer-003-question.html"};
+        const problemData = {"correctAnswer":"12","nextUrl":"problem-integer-004-question.html","previousUrl":"problem-integer-004-question.html"};
         
         function showAnswer() {
             document.querySelector('.answer-section').classList.add('show');
